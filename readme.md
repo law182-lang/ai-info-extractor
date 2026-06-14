@@ -1,151 +1,77 @@
-Python  
-markdown\_content \= """\# AI Info Extractor Pro
+# AI Info Extractor Pro
 
 Aplikasi berbasis web untuk mengekstrak informasi dari teks tidak terstruktur menjadi format tabel terstruktur menggunakan AI.
 
-\#\# Arsitektur Sistem
+## Arsitektur Sistem
 
-\* \*\*Frontend:\*\* Streamlit.  
-\* \*\*Backend/AI:\*\* Google GenAI SDK dengan model \`gemini-3.5-flash\`.  
-\* \*\*Pemrosesan Data:\*\* Instruksi sistem dikonfigurasi untuk mengembalikan JSON, dibersihkan menggunakan Regex, lalu dikonversi menjadi Pandas DataFrame.  
-\* \*\*Output:\*\* Tabel interaktif, opsi unduh CSV dan JSON.
+* **Frontend:** Streamlit.
+* **Backend/AI:** Google GenAI SDK dengan model `gemini-3.5-flash`.
+* **Pemrosesan Data:** Instruksi sistem dikonfigurasi untuk mengembalikan JSON, dibersihkan menggunakan Regex, lalu dikonversi menjadi Pandas DataFrame.
+* **Output:** Tabel interaktif, opsi unduh CSV dan JSON.
 
-\#\# Kebutuhan Sistem
+## Kebutuhan Sistem
 
-Library yang dibutuhkan:  
-\* \`streamlit\`  
-\* \`google-genai\`  
-\* \`pandas\`  
-\* \`python-dotenv\`
+Library yang dibutuhkan:
+* `streamlit`
+* `google-genai`
+* `pandas`
+* `python-dotenv`
 
-\#\# Struktur Repositori
+## Struktur Repositori
 
-Output kode
+```text
+.
+├── app.py              # File skrip utama aplikasi
+├── .streamlit/
+│   └── secrets.toml    # File untuk menyimpan API Key (lokal)
+├── .gitignore          # File untuk mengabaikan kredensial
+├── requirements.txt    # Daftar library yang dibutuhkan
+└── README.md           # Dokumentasi repositori
+```
 
-File README.md successfully created.
+## Instruksi Instalasi & Penggunaan
+### Menjalankan di Komputer Lokal
+1.  **Clone Repositori:**
 
-\`\`\`text  
-.  
-├── app.py              \# File skrip utama aplikasi   
-├── .streamlit/  
-│   └── secrets.toml    \# File untuk menyimpan API Key (lokal)  
-├── .gitignore          \# File untuk mengabaikan kredensial  
-├── requirements.txt    \# Daftar library yang dibutuhkan  
-└── README.md           \# Dokumentasi repositori
+    ```bash
+    git clone [https://github.com/law182-lang/ai-info-extractor.git](https://github.com/law182-lang/ai-info-extractor.git)cd ai-info-extractor 
+    ```
 
-## **Instruksi Instalasi & Penggunaan**
+2.  **Konfigurasi API Key:**
 
-### **1\. Menjalankan di Komputer Lokal**
+    Buat folder .streamlit dan file secrets.toml di dalam folder root. Masukkan API Key Anda:
 
-**Clone Repositori:**
+    ```bash
+    GEMINI_API_KEY="api_key_anda_disini"
+    ```
 
-Bash  
-git clone \[https://github.com/law182-lang/ai-info-extractor.git\](https://github.com/law182-lang/ai-info-extractor.git)  
-cd ai-info-extractor
+3.  **Install Dependensi:**
 
-**Konfigurasi API Key:**  
-Buat folder .streamlit dan file secrets.toml di dalam folder root. Masukkan API Key Anda:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Ini, TOML  
-GEMINI\_API\_KEY\="api\_key\_anda\_disini"
+4.  **Jalankan Aplikasi:**
 
-**Install Dependensi:**
+    ```bash
+    streamlit run app.py
+    ```
 
-Bash  
-pip install \-r requirements.txt
+### Deploy ke Streamlit Community Cloud
 
-**Jalankan Aplikasi:**
+1. **Pastikan folder .streamlit/ dan file .env sudah terdaftar di .gitignore agar tidak terunggah ke GitHub.**
 
-Bash  
-streamlit run app.py
+2. **Push kode terbaru ke GitHub repositori Anda.**
 
-### **2\. Deploy ke Streamlit Community Cloud**
+3. **Login ke share.streamlit.io.**
 
-1. Pastikan folder .streamlit/ dan file .env sudah terdaftar di .gitignore agar tidak terunggah ke GitHub.  
-2. Push kode terbaru ke GitHub repositori Anda.  
-3. Login ke share.streamlit.io.  
-4. Klik **New app**, lalu pilih repositori law182-lang/ai-info-extractor, branch main, dan Main file path app.py.  
-5. Klik **Advanced settings...**, masuk ke bagian **Secrets**, dan tambahkan:  
-   Ini, TOML  
-   GEMINI\_API\_KEY\="api\_key\_anda\_disini"
+4. **Klik New app, lalu pilih repositori law182-lang/ai-info-extractor,branch main, dan Main file path app.py.**
 
-6. Klik **Save**, lalu **Deploy\!**.  
-   """
+5. **Klik Advanced settings..., masuk ke bagian Secrets, dan tambahkan:**
 
-with open("README.md", "w", encoding="utf-8") as f:  
-f.write(markdown\_content)  
-print("File README.md successfully created.")
+```bash
+GEMINI_API_KEY="api_key_anda_disini"
+```
 
-File MD Anda sudah siap  
-\[file-tag: code-generated-file-0-1781420375909078282\]
+6. **Klik Save, lalu Deploy!.**
 
-Berikut adalah teks format Markdown jika Anda ingin langsung menyalinnya:
-
-\`\`\`markdown  
-\# AI Info Extractor Pro
-
-Aplikasi berbasis web untuk mengekstrak informasi dari teks tidak terstruktur menjadi format tabel terstruktur menggunakan AI.
-
-\#\# Arsitektur Sistem
-
-\* \*\*Frontend:\*\* Streamlit.  
-\* \*\*Backend/AI:\*\* Google GenAI SDK dengan model \`gemini-3.5-flash\`.  
-\* \*\*Pemrosesan Data:\*\* Instruksi sistem dikonfigurasi untuk mengembalikan JSON, dibersihkan menggunakan Regex, lalu dikonversi menjadi Pandas DataFrame.  
-\* \*\*Output:\*\* Tabel interaktif, opsi unduh CSV dan JSON.
-
-\#\# Kebutuhan Sistem
-
-Library yang dibutuhkan:  
-\* \`streamlit\`  
-\* \`google-genai\`  
-\* \`pandas\`  
-\* \`python-dotenv\`
-
-\#\# Struktur Repositori
-
-\`\`\`text  
-.  
-├── app.py              \# File skrip utama aplikasi   
-├── .streamlit/  
-│   └── secrets.toml    \# File untuk menyimpan API Key (lokal)  
-├── .gitignore          \# File untuk mengabaikan kredensial  
-├── requirements.txt    \# Daftar library yang dibutuhkan  
-└── README.md           \# Dokumentasi repositori
-
-## **Instruksi Instalasi & Penggunaan**
-
-### **1\. Menjalankan di Komputer Lokal**
-
-**Clone Repositori:**
-
-Bash  
-git clone \[https://github.com/law182-lang/ai-info-extractor.git\](https://github.com/law182-lang/ai-info-extractor.git)  
-cd ai-info-extractor
-
-**Konfigurasi API Key:**  
-Buat folder .streamlit dan file secrets.toml di dalam folder root. Masukkan API Key Anda:
-
-Ini, TOML  
-GEMINI\_API\_KEY\="api\_key\_anda\_disini"
-
-**Install Dependensi:**
-
-Bash  
-pip install \-r requirements.txt
-
-**Jalankan Aplikasi:**
-
-Bash  
-streamlit run app.py
-
-### **2\. Deploy ke Streamlit Community Cloud**
-
-1. Pastikan folder .streamlit/ dan file .env sudah terdaftar di .gitignore agar tidak terunggah ke GitHub.  
-2. Push kode terbaru ke GitHub repositori Anda.  
-3. Login ke share.streamlit.io.  
-4. Klik **New app**, lalu pilih repositori law182-lang/ai-info-extractor, branch main, dan Main file path app.py.  
-5. Klik **Advanced settings...**, masuk ke bagian **Secrets**, dan tambahkan:  
-   Ini, TOML  
-   GEMINI\_API\_KEY\="api\_key\_anda\_disini"
-
-6. Klik **Save**, lalu **Deploy\!**.
