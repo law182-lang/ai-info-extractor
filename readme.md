@@ -26,7 +26,7 @@ Library yang dibutuhkan:
 │   └── secrets.toml    # File untuk menyimpan API Key (lokal)
 ├── .gitignore          # File untuk mengabaikan kredensial
 ├── requirements.txt    # Daftar library yang dibutuhkan
-└── README.md           # Dokumentasi repositori
+└── readme.md           # Dokumentasi repositori
 ```
 
 ## Instruksi Instalasi & Penggunaan
