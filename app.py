@@ -16,7 +16,7 @@ if not API_KEY:
     st.error("Error: GEMINI_API_KEY tidak ditemukan.")
     st.stop()
 
-# Inisialisasi client baru
+# Inisialisasi client
 client = genai.Client(api_key=API_KEY)
 
 st.title("AI Information Extractor Pro")
@@ -40,8 +40,8 @@ if submitted:
                     "Kamu adalah asisten ekstraksi data. Ekstrak informasi dari teks "
                     "dan kembalikan HANYA dalam format JSON array of objects."
                 )
-                
-                # Menggunakan library google-genai terbaru
+
+                # Model        
                 response = client.models.generate_content(
                     model="gemini-3.5-flash",
                     contents=input_text,
@@ -67,6 +67,7 @@ if submitted:
             except Exception as e:
                 st.error(f"Error: {str(e)}")
 
+# output
 if st.session_state.extracted_df is not None:
     st.dataframe(st.session_state.extracted_df, use_container_width=True)
     
